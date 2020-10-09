@@ -1,4 +1,6 @@
 from random import randint
+from datetime import date, time, datetime
+
 # _____________________________________________
 
 class AbstractMelonOrder():
@@ -11,8 +13,14 @@ class AbstractMelonOrder():
 
     def get_base_price(self):
         """calculate base proce accoutring to random num 5-9"""
-
+        weekday = date.today().weekday()
+        hour = datetime.now().hour
+        
         base_price = randint(5,9)
+        print(base_price)
+        if weekday < 5 and (hour in range(8, 11)):
+            return base_price + 4
+
         return base_price
 
     def get_total(self):

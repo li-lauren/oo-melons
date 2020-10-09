@@ -102,5 +102,9 @@ class InternationalMelonOrder(AbstractMelonOrder):
 class GovernmentMelonOrder(AbstractMelonOrder):
     """For government melon orders."""
     tax = 0
-    
+    passed_inspection = False
+
+    def mark_inspection(self, passed):
+        self.passed_inspection = passed
+
 

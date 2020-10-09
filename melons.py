@@ -98,3 +98,9 @@ class InternationalMelonOrder(AbstractMelonOrder):
         else:
             total = super().get_total()
         return total
+
+class GovernmentMelonOrder(AbstractMelonOrder):
+    """For government melon orders."""
+    tax = 0
+    
+
